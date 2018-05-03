@@ -70,7 +70,7 @@
     right: 0;
     background: rgba(0,0,0, 0.3);
     transition: all 0.3s;
-    display: none;
+    opacity: 0;
   }
   .cover .action-delete{
     position: absolute;
@@ -87,7 +87,7 @@
     cursor: pointer;
   }
   .prod.hover .cover{
-    display: block;
+    opacity: 1;
   }
   .prod-ct{
     margin-left: -20px;
