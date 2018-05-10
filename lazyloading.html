@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>瀑布流</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+    div{
+      max-width:620px;
+      margin:0 auto;
+    }
+    img{
+      width:200px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+  <img src="https://loading.io/spinners/palette-ring/index.svg" alt="" data-src="http://via.placeholder.com/200x200">
+
+</div>
+  <script>
+    $(window).on('scroll',function(){
+      start()
+    })
+    function start(){
+      $('.container img').not('[data-isload]').each(function(){
+        setTimeout(()=>{
+          if(isShow($(this))){
+            loadImg($(this))
+          }
+        },500)
+      })
+    }
+    start()
+    function isShow($node){
+      return $node.offset().top <= $(window).height() + $(window).scrollTop()
+    }
+
+    function loadImg($node){
+      $node.attr('src',$node.attr('data-src'))
+      $node.attr('data-isload',1)
+    }
+    // loadImg($('container img'))
+  </script>
+</body>
+</html>
