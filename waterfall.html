@@ -58,34 +58,17 @@
         })
 
         $(window).on('resize', function(){
-          colHeightArray = []
-          colCount = Math.floor($('.waterfall').width()/ _this.imgWidth)
-          for(var i=0; i<colCount; i++){
-            colHeightArray[i] = 0
+          _this.colHeightArray = []
+          _this.colCount = Math.floor($('.waterfall').width()/ _this.imgWidth)
+          for(var i=0; i<_this.colCount; i++){
+            _this.colHeightArray[i] = 0
           }
           $('.waterfall img').each(function(){
-            var minValue = colHeightArray[0] //0
-            var minIndex = 0   //0
-
-            for(var i=0; i<colCount; i++){
-              if(colHeightArray[i]<minValue){
-                minValue = colHeightArray[i]
-                minIndex = i
-              }
-            }
-            $(this).css({
-              left: minIndex * _this.imgWidth,
-              top: minValue
-            })
-            console.log($(this).outerHeight(true))
-            colHeightArray[minIndex] += $(this).outerHeight(true)
-            console.log(colHeightArray)
-
+            _this.start($(this))
           })
         })
       },
       start:function($node){
-        console.log(this)
         var minValue = this.colHeightArray[0] //0
         var minIndex = 0   //0
 
@@ -95,7 +78,6 @@
             minIndex = i
           }
         }
-        console.log(minValue)
         $node.css({
           left: minIndex * this.imgWidth,
           top: minValue
