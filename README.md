@@ -1,7 +1,7 @@
 # demo
 
-  [预览add.html](http://shadowwang.top/demo/add.html)
+  [预览add.html](https://wang7211401.github.io/demo/add.html)
 
-  [预览banner.html](http://shadowwang.top/demo/banner.html)
+  [预览banner.html](https://wang7211401.github.io/demo/banner.html)
 
-  [小demo](http://shadowwang.top/demo/index.html)
+  [小demo](https://wang7211401.github.io/demo/index.html)
